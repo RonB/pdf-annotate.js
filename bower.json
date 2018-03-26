@@ -1,0 +1,15 @@
+{
+  "name": "pdf-annotate.js",
+  "main": "dist/pdf-annotate.js",
+  "homepage": "https://github.com/RonB/pdf-annotate.js",
+  "authors": [
+    
+  ],
+  "description": "pdf.js annotate plugin",
+  "keywords": [
+    "pdf",
+    "annotation"
+  ],
+  "license": "MIT"
+}
+
