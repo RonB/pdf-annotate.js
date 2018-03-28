@@ -18,7 +18,7 @@ const COLORS = [
   {hex: '#F06291', name: 'Light Pink'}
 ];
 
-export default function initColorPicker(el, value, onChange) {
+function initColorPicker(el, value, onChange) {
   function setColor(value, fireOnChange = true) {
     currentValue = value;
     a.setAttribute('data-color', value);
