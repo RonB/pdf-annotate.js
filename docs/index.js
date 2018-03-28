@@ -119,7 +119,7 @@
 	  var textColor = void 0;
 
 	  function initText() {
-	    var size = document.querySelector('.toolbar .text-size');
+	    var size = document.querySelector('.pdf-annotate-toolbar .text-size');
 	    [8, 9, 10, 11, 12, 14, 18, 24, 30, 36, 48, 60, 72, 96].forEach(function (s) {
 	      size.appendChild(new Option(s, s));
 	    });
@@ -138,7 +138,7 @@
 	      modified = true;
 	      textSize = size;
 	      localStorage.setItem(RENDER_OPTIONS.documentId + '/text/size', textSize);
-	      document.querySelector('.toolbar .text-size').value = textSize;
+	      document.querySelector('.pdf-annotate-toolbar .text-size').value = textSize;
 	    }
 
 	    if (textColor !== color) {
@@ -146,13 +146,13 @@
 	      textColor = color;
 	      localStorage.setItem(RENDER_OPTIONS.documentId + '/text/color', textColor);
 
-	      var selected = document.querySelector('.toolbar .text-color.color-selected');
+	      var selected = document.querySelector('.pdf-annotate-toolbar .text-color.color-selected');
 	      if (selected) {
 	        selected.classList.remove('color-selected');
 	        selected.removeAttribute('aria-selected');
 	      }
 
-	      selected = document.querySelector('.toolbar .text-color[data-color="' + color + '"]');
+	      selected = document.querySelector('.pdf-annotate-toolbar .text-color[data-color="' + color + '"]');
 	      if (selected) {
 	        selected.classList.add('color-selected');
 	        selected.setAttribute('aria-selected', true);
@@ -168,7 +168,7 @@
 	    setText(e.target.value, textColor);
 	  }
 
-	  document.querySelector('.toolbar .text-size').addEventListener('change', handleTextSizeChange);
+	  document.querySelector('.pdf-annotate-toolbar .text-size').addEventListener('change', handleTextSizeChange);
 
 	  initText();
 	})();
@@ -179,7 +179,7 @@
 	  var penColor = void 0;
 
 	  function initPen() {
-	    var size = document.querySelector('.toolbar .pen-size');
+	    var size = document.querySelector('.pdf-annotate-toolbar .pen-size');
 	    for (var i = 0; i < 20; i++) {
 	      size.appendChild(new Option(i + 1, i + 1));
 	    }
@@ -198,7 +198,7 @@
 	      modified = true;
 	      penSize = size;
 	      localStorage.setItem(RENDER_OPTIONS.documentId + '/pen/size', penSize);
-	      document.querySelector('.toolbar .pen-size').value = penSize;
+	      document.querySelector('.pdf-annotate-toolbar .pen-size').value = penSize;
 	    }
 
 	    if (penColor !== color) {
@@ -206,13 +206,13 @@
 	      penColor = color;
 	      localStorage.setItem(RENDER_OPTIONS.documentId + '/pen/color', penColor);
 
-	      var selected = document.querySelector('.toolbar .pen-color.color-selected');
+	      var selected = document.querySelector('.pdf-annotate-toolbar .pen-color.color-selected');
 	      if (selected) {
 	        selected.classList.remove('color-selected');
 	        selected.removeAttribute('aria-selected');
 	      }
 
-	      selected = document.querySelector('.toolbar .pen-color[data-color="' + color + '"]');
+	      selected = document.querySelector('.pdf-annotate-toolbar .pen-color[data-color="' + color + '"]');
 	      if (selected) {
 	        selected.classList.add('color-selected');
 	        selected.setAttribute('aria-selected', true);
@@ -228,7 +228,7 @@
 	    setPen(e.target.value, penColor);
 	  }
 
-	  document.querySelector('.toolbar .pen-size').addEventListener('change', handlePenSizeChange);
+	  document.querySelector('.pdf-annotate-toolbar .pen-size').addEventListener('change', handlePenSizeChange);
 
 	  initPen();
 	})();
@@ -237,11 +237,11 @@
 	(function () {
 	  var tooltype = localStorage.getItem(RENDER_OPTIONS.documentId + '/tooltype') || 'cursor';
 	  if (tooltype) {
-	    setActiveToolbarItem(tooltype, document.querySelector('.toolbar button[data-tooltype=' + tooltype + ']'));
+	    setActiveToolbarItem(tooltype, document.querySelector('.pdf-annotate-toolbar button[data-tooltype=' + tooltype + ']'));
 	  }
 
 	  function setActiveToolbarItem(type, button) {
-	    var active = document.querySelector('.toolbar button.active');
+	    var active = document.querySelector('.pdf-annotate-toolbar button.active');
 	    if (active) {
 	      active.classList.remove('active');
 
@@ -301,7 +301,7 @@
 	    }
 	  }
 
-	  document.querySelector('.toolbar').addEventListener('click', handleToolbarClick);
+	  document.querySelector('.pdf-annotate-toolbar').addEventListener('click', handleToolbarClick);
 	})();
 
 	// Scale/rotate
@@ -333,13 +333,13 @@
 	    setScaleRotate(RENDER_OPTIONS.scale, RENDER_OPTIONS.rotate - 90);
 	  }
 
-	  document.querySelector('.toolbar select.scale').value = RENDER_OPTIONS.scale;
-	  document.querySelector('.toolbar select.scale').addEventListener('change', handleScaleChange);
-	  document.querySelector('.toolbar .rotate-ccw').addEventListener('click', handleRotateCCWClick);
-	  document.querySelector('.toolbar .rotate-cw').addEventListener('click', handleRotateCWClick);
+	  document.querySelector('.pdf-annotate-toolbar select.scale').value = RENDER_OPTIONS.scale;
+	  document.querySelector('.pdf-annotate-toolbar select.scale').addEventListener('change', handleScaleChange);
+	  document.querySelector('.pdf-annotate-toolbar .rotate-ccw').addEventListener('click', handleRotateCCWClick);
+	  document.querySelector('.pdf-annotate-toolbar .rotate-cw').addEventListener('click', handleRotateCWClick);
 	})();
 
-	// Clear toolbar button
+	// Clear.pdf-annotate-toolbar button
 	(function () {
 	  function handleClearClick(e) {
 	    if (confirm('Are you sure you want to clear annotations?')) {
