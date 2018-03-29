@@ -1,3 +1,4 @@
+PDFJS = pdfjsLib;
 import StoreAdapter from './adapter/StoreAdapter';
 import LocalStoreAdapter from './adapter/LocalStoreAdapter';
 import render from './render';
