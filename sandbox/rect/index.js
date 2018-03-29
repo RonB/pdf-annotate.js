@@ -21,11 +21,11 @@ Promise.all([
 (function () {
   let tooltype = localStorage.getItem(`${DOCUMENT_ID}/tooltype`) || 'area';
   if (tooltype) {
-    setActiveToolbarItem(tooltype, document.querySelector(`.toolbar button[data-tooltype=${tooltype}]`));
+    setActiveToolbarItem(tooltype, document.querySelector(`.pdf-annotate-toolbar button[data-tooltype=${tooltype}]`));
   }
 
   function setActiveToolbarItem(type, button) {
-    let active = document.querySelector('.toolbar button.active');
+    let active = document.querySelector('.pdf-annotate-toolbar button.active');
     if (active) {
       active.classList.remove('active');
     }
@@ -54,6 +54,6 @@ Promise.all([
     }
   }
 
-  document.querySelector('.toolbar').addEventListener('click', handleToolbarClick);
-  document.querySelector('.toolbar .clear').addEventListener('click', handleClearClick);
+  document.querySelector('.pdf-annotate-toolbar').addEventListener('click', handleToolbarClick);
+  document.querySelector('.pdf-annotate-toolbar .clear').addEventListener('click', handleClearClick);
 })();

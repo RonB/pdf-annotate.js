@@ -21,7 +21,7 @@ PDFJSAnnotate.getAnnotations(DOCUMENT_ID, PAGE_NUMBER).then((annotations) => {
   let penSize;
 
   function initPen() {
-    let size = document.querySelector('.toolbar .pen-size');
+    let size = document.querySelector('.pdf-annotate-toolbar .pen-size');
     for (let i=0; i<20; i++) {
       size.appendChild(new Option(i+1, i+1));
     }
@@ -32,7 +32,7 @@ PDFJSAnnotate.getAnnotations(DOCUMENT_ID, PAGE_NUMBER).then((annotations) => {
     );
 
     UI.enablePen();
-    initColorPicker(document.querySelector('.toolbar .pen-color'), penColor, function (value) {
+    initColorPicker(document.querySelector('.pdf-annotate-toolbar .pen-color'), penColor, function (value) {
       setPen(penSize, value);
     });
   }
@@ -44,7 +44,7 @@ PDFJSAnnotate.getAnnotations(DOCUMENT_ID, PAGE_NUMBER).then((annotations) => {
       modified = true;
       penSize = size;
       localStorage.setItem(`${DOCUMENT_ID}/pen/size`, penSize);
-      document.querySelector('.toolbar .pen-size').value = penSize;
+      document.querySelector('.pdf-annotate-toolbar .pen-size').value = penSize;
     }
 
     if (penColor !== color) {
@@ -52,13 +52,13 @@ PDFJSAnnotate.getAnnotations(DOCUMENT_ID, PAGE_NUMBER).then((annotations) => {
       penColor = color;
       localStorage.setItem(`${DOCUMENT_ID}/pen/color`, penColor);
       
-      let selected = document.querySelector('.toolbar .pen-color.color-selected');
+      let selected = document.querySelector('.pdf-annotate-toolbar .pen-color.color-selected');
       if (selected) {
         selected.classList.remove('color-selected');
         selected.removeAttribute('aria-selected');
       }
 
-      selected = document.querySelector(`.toolbar .pen-color[data-color="${color}"]`);
+      selected = document.querySelector(`.pdf-annotate-toolbar .pen-color[data-color="${color}"]`);
       if (selected) {
         selected.classList.add('color-selected');
         selected.setAttribute('aria-selected', true);
@@ -82,7 +82,7 @@ PDFJSAnnotate.getAnnotations(DOCUMENT_ID, PAGE_NUMBER).then((annotations) => {
   }
 
   document.querySelector('.pen-size').addEventListener('change', handlePenSizeChange);
-  document.querySelector('.toolbar .clear').addEventListener('click', handleClearClick);
+  document.querySelector('.pdf-annotate-toolbar .clear').addEventListener('click', handleClearClick);
 
   initPen();
 })();
