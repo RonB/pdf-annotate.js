@@ -3956,7 +3956,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return new Promise(function (resolve, reject) {
 	          // Render text layer for a11y of text content
 	          var textLayer = page.querySelector('.textLayer');
-	          var textLayerFactory = new PDFJS.DefaultTextLayerFactory();
+	          var textLayerFactory = new pdfjsLib.DefaultTextLayerFactory();
 	          var textLayerBuilder = textLayerFactory.createTextLayerBuilder(textLayer, pageNumber - 1, viewport);
 	          textLayerBuilder.setTextContent(textContent);
 	          textLayerBuilder.render();
