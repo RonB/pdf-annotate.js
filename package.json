@@ -15,18 +15,18 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/instructure/pdf-annotate.js.git"
+    "url": "git+https://github.com/RonB/pdf-annotate.js.git"
   },
   "keywords": [
     "pdf",
     "annotation"
   ],
-  "author": "Matt Zabriskie",
+  "author": "RonB",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/instructure/pdf-annotate.js/issues"
+    "url": "https://github.com/RonB/pdf-annotate.js/issues"
   },
-  "homepage": "https://github.com/instructure/pdf-annotate.js#readme",
+  "homepage": "https://github.com/RonB/pdf-annotate.js#readme",
   "devDependencies": {
     "babel-core": "6.7.4",
     "babel-loader": "6.2.4",

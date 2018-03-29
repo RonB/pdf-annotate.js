@@ -7,7 +7,7 @@
   ],
   "homepage": "https://github.com/RonB/pdf-annotate.js",
   "authors": [
-    
+        "Ronny Thomassen <ront@brein.nl>"
   ],
   "description": "pdf.js annotate plugin",
   "keywords": [
